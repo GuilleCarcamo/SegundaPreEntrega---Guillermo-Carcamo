@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 import { gFetch } from "../../utils/gFetch"
 
 
@@ -44,7 +45,9 @@ import { gFetch } from "../../utils/gFetch"
 
                 </div>
                 <div className="card-footer"></div>
+                <Link to='/detalle'>
                 <button className="btn btn-outline-dark w-100">Detalle</button>
+                </Link>
      
             </div>
             ))

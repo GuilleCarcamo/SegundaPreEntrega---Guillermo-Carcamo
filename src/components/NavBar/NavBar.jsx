@@ -19,10 +19,10 @@ const NavBar = () => {
             <ul className="navbar-nav">
              
               <li className="nav-item">
-                <NavLink className={({isActive})=> isActive ? 'btn btn-primary' : 'btn btn-outline-primary'} to='/detalle'>Remeras</NavLink>
+                <NavLink className={({isActive})=> isActive ? 'btn btn-primary' : 'btn btn-outline-primary'} to='/categoria/remeras'>Remeras</NavLink>
               </li>
               <li className="nav-item">
-              <NavLink className={({isActive})=> isActive ? 'btn btn-primary' : 'btn btn-outline-primary'} to='/detalle'>Pantalones</NavLink>
+              <NavLink className={({isActive})=> isActive ? 'btn btn-primary' : 'btn btn-outline-primary'} to='/categoria/pantalones'>Pantalones</NavLink>
               </li>
 
             </ul>
