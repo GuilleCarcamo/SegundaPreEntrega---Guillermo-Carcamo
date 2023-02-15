@@ -9,6 +9,8 @@ import cart from './assets/img/cart.png'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import CartContainer from './components/CartContainer/CartContainer';
+
+import ItemCount from './components/ItemCount/ItemCount';
 function App() {
   const [count, setCount] = useState(0)
 
@@ -17,16 +19,15 @@ function App() {
     <>
     <BrowserRouter>
     <NavBar />
+    
       <Routes>
         <Route path='/' element={<ItemListContainer saludo='Bienvenidos a la tienda!' />} />
         <Route path='/categoria/:idCategoria' element={<ItemListContainer saludo='Bienvenidos a la tienda!' />} />
         <Route path='/detalle/:idProducto' element={<ItemDetailContainer />} />
         <Route path='/cart' element={<CartContainer />} />
         <Route path='*' element= {<Navigate to='/' />} />
-        
       </Routes>
-      
-      
+      <ItemCount />
     </BrowserRouter>
     </>
   )

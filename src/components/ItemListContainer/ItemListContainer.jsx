@@ -26,8 +26,6 @@ import { gFetch } from "../../utils/gFetch"
       }
 },[idCategoria])
 
-console.log(idCategoria)
-
   
 // nuevoArray []  <- [].map
  return  (
@@ -58,6 +56,8 @@ console.log(idCategoria)
 
                 </div>
                 <div className="card-footer"></div>
+
+                
                 <Link to={`/detalle/${productos.id}`}>
                 <button className="btn btn-outline-dark w-100">Detalle</button>
                 </Link>
@@ -73,4 +73,3 @@ console.log(idCategoria)
 }
 
 export default ItemListContainer
-
