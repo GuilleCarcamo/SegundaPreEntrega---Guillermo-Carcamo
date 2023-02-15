@@ -13,13 +13,14 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
+
+    <>
     <BrowserRouter>
     <NavBar />
       <Routes>
         <Route path='/' element={<ItemListContainer saludo='Bienvenidos a la tienda!' />} />
-        <Route path='/categoria/remeras' element={<ItemListContainer saludo='Bienvenidos a la tienda!' />} />
-        <Route path='/categoria/pantalones' element={<ItemListContainer saludo='Bienvenidos a la tienda!' />} />
-        <Route path='/detalle' element={<ItemDetailContainer />} />
+        <Route path='/categoria/:idCategoria' element={<ItemListContainer saludo='Bienvenidos a la tienda!' />} />
+        <Route path='/detalle/:idProducto' element={<ItemDetailContainer />} />
         <Route path='/cart' element={<CartContainer />} />
         <Route path='*' element= {<Navigate to='/' />} />
         
@@ -27,6 +28,7 @@ function App() {
       
       
     </BrowserRouter>
+    </>
   )
 }
 

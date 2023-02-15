@@ -1,25 +1,38 @@
 import { useEffect, useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import { gFetch } from "../../utils/gFetch"
 
 
+ export const ItemListContainer = ( greeting ) => {
 
- const ItemListContainer = (greeting) => {
- const [productos, setProductos] = useState([])
- const [loading, setLoading ] = useState(true)
+   const [productos, setProductos] = useState([])
+   const [loading, setLoading ] = useState(true)
+   const { idCategoria } = useParams()
 
   useEffect(()=>{
-   gFetch()
-   .then(resp => setProductos(resp)) 
-   .catch(err => console.log(err))
-   .finally( ()=> setLoading(false))
-},[])
+      if (idCategoria) {
+
+        gFetch()
+        .then(resp => setProductos(resp.filter(producto => producto.categoria === idCategoria))) 
+        .catch(err => console.log(err))
+        .finally(()=> setLoading(false)) 
+        
+      } else {
+
+        gFetch()
+        .then(resp => setProductos(resp)) 
+        .catch(err => console.log(err))
+        .finally( ()=> setLoading(false)) 
+      }
+},[idCategoria])
+
+console.log(idCategoria)
+
   
 // nuevoArray []  <- [].map
  return  (
     <div>
        <h2>{greeting.saludo}</h2>
-
 
        { loading ?   
          <h2>Cargando...</h2>
@@ -45,7 +58,7 @@ import { gFetch } from "../../utils/gFetch"
 
                 </div>
                 <div className="card-footer"></div>
-                <Link to='/detalle'>
+                <Link to={`/detalle/${productos.id}`}>
                 <button className="btn btn-outline-dark w-100">Detalle</button>
                 </Link>
      

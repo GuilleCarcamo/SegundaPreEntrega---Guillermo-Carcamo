@@ -2,12 +2,13 @@ import { useParams } from "react-router-dom"
 
 
 const ItemDetailContainer = () => {
-    const {IdProducto} = useParams()
-    console.log(IdProducto)
-     //gFetch(IdProducto) <- producto string
+    const {idProducto} = useParams()
+ 
+   
+ 
      
     return (
-        <div>ItemDetailContainer</div>
+        <div>ItemDetailContainer id: {idProducto}</div>
     ) 
 
 }
