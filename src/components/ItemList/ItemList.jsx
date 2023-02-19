@@ -7,8 +7,6 @@ const ItemList = ( {productos}) => {
     <div style={{display: 'flex',flexDirection: 'row',flexWrap: 'wrap'}}> 
        { productos.map(producto => <Item producto={producto} />)} 
      </div> 
-
-
   ) 
 }      
 

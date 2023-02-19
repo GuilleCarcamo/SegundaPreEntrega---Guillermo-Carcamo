@@ -7,12 +7,12 @@ let productos = [
    {id: '6', categoria: 'pantalon', name: "Pantalon Blanco", price:37, foto: 'https://www.segutecnica.com/images/000000000000005443111ombu-pantalon-de-trabajo-blanco-segutecnica.png', stock: 5 },
 ]
 // pendiente - completada - rechazada (95%)
-export const gFetch = () => new Promise( (res, rej)=>{
+export const gFetch = (id) => new Promise( (res, rej)=>{
 let condition = true 
 // acciones
 if (condition) {
       setTimeout(()=>{
-         res(productos)
+         res(id ? productos.find(prod => id === prod.id) : productos)
       },2000)
 } else { 
    rej('Todo mal')
