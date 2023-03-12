@@ -8,15 +8,16 @@ const NavBar = () => {
       
        
        
-       <><nav className="navbar navbar-expand-lg bg-body-tertiary">
-        <div className="container-fluid">
+       <><nav className="navbar navbar-expand-lg bg-body-tertiary ">
+        <div className="container-fluid ">
+
           <NavLink to='/' className="btn btn-primary">Inicio a tienda GuilleCarcamo!!</NavLink>
 
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav">
+            <ul className="navbar-nav ml-auto">
              
               <li className="nav-item">
                 <NavLink className={({isActive})=> isActive ? 'btn btn-primary' : 'btn btn-outline-primary'} to='/categoria/remera'>Remeras</NavLink>
